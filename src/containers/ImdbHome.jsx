@@ -3,18 +3,18 @@ import * as React from 'react';
 // import PrimarySearchAppBar from '../components/Header';
 // import MovieCards from '../components/MovieCards';
 import PhotoGallery from '../components/PhotoGallery';
-import { experimentalStyled as styled } from '@mui/material/styles';
+// import { experimentalStyled as styled } from '@mui/material/styles';
 import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import Grid from '@mui/material/Grid';
+// import Paper from '@mui/material/Paper';
+// import Grid from '@mui/material/Grid';
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
-  ...theme.typography.body2,
-  padding: theme.spacing(6),
-  textAlign: 'center',
-  color: theme.palette.text.secondary,boxShadow:'none'
-}));
+// const Item = styled(Paper)(({ theme }) => ({
+//   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
+//   ...theme.typography.body2,
+//   padding: theme.spacing(6),
+//   textAlign: 'center',
+//   color: theme.palette.text.secondary,boxShadow:'none'
+// }));
 
 export default function ResponsiveGrid() {
   return (
