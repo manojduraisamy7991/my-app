@@ -1,9 +1,9 @@
-import ImdbHome from './containers/ImdbHome'
+import ActorHome from './containers/ActorHome'
 
 function App() {
   return (
     <div className="App">
-       <ImdbHome />
+       <ActorHome />
     </div>
   );
 }

@@ -10,29 +10,26 @@ const Item = styled(Paper)(({ theme }) => ({
   color: theme.palette.text.secondary,
   maxWidth: 500,
   elevation:0,
-  boxShadow:'none'
-  
 }));
 
-
-export default function Blogs(props) {
-const {title, field_photo_image_section, last_update} = props.data;
+export default function ActorCard(props) {
+  const {picture, firstName,lastName, title} = props.data;
   return (
-    <Item className='card' sx={{ my: 1, mx: 'auto', p: 0 }}>
+    <Item className='card' sx={{ my: 1, mx: 'auto', p: 0 ,  borderRadius:'23px'}}>
               <Stack spacing={2} direction="row">
                 <Stack>
                   <CardMedia
                     component="img"
-                    sx={{ width: 181, height: 150, borderRadius: 8 }}
-                    image={field_photo_image_section}
+                    sx={{ width: 181, height: 150, borderRadius: 6 }}
+                    image={picture}
                     alt="Live from space album cover"
                   />
                 </Stack>
                 <Stack sx={{ minWidth: 0 }}>
-                  <Typography noWrap variant='h6'>{title}</Typography>
-                  <Typography noWrap variant='h7'>{last_update}</Typography>
+                  <Typography noWrap variant='h6'>{title+'. '+firstName}</Typography>
+                  <Typography noWrap variant='h7'>{lastName}</Typography>
                 </Stack>
               </Stack>
-            </Item>
+    </Item>
   );
 }

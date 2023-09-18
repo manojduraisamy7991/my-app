@@ -1,3 +1,6 @@
-export  const apiEndPoint ='https://englishapi.pinkvilla.com/app-api/v1/photo-gallery-feed-page/page/'
+  const apiEndPoint = 'https://dummyapi.io/data/v1/user?page='
+ const headers = {
+        'app-id': '6505e1370c3ef6842c2c19bd',
+      }
 
-//  'https://dummyapi.io/data/v1/user?page='
+      export {apiEndPoint , headers }

@@ -2,26 +2,21 @@
 import React, { useState, useEffect } from 'react';
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { Box, Grid } from '@mui/material';
-import Blogs from './Blogs';
-import {apiEndPoint} from '../helper/fetchUtils';
+import ActorCard from './ActorCard';
+import {apiEndPoint, headers} from '../helper/fetchUtils';
 
-
-const InfiniteScrollComponent = () => {
+const ActorList = () => {
   const [data, setData] = useState([]);
   const [page, setPage] = useState(1);
   const [isEmpty,setisEmpty] =  useState(false)
 
   const fetchData = async () => {
-    const response =   await fetch(`${apiEndPoint+page}` 
-    
-    // await fetch(`${apiEndPoint+page}&limit=10`
+    const response = await fetch(`${apiEndPoint+page}&limit=10`
     , {
-      headers: {
-        'app-id': '6505e1370c3ef6842c2c19bd',
-      },
+     headers,
     });
     const jsonData = await response.json();
-    setData(prevData => [...prevData, ...jsonData.nodes]);
+    setData(prevData => [...prevData, ...jsonData.data]);
     if(jsonData.data.length ===0)setisEmpty(true)
   };
 
@@ -36,11 +31,11 @@ const InfiniteScrollComponent = () => {
           dataLength={data.length}
           next={() => setPage(prevPage => prevPage + 1)}
           hasMore={true}
-          loader={<h4 style={{textAlign:'center'}}>{isEmpty?'Has no more data.':'Post Loading...'}</h4>}
-          endMessage={<p>No more items</p>}
+          loader={<h4 style={{textAlign:'center'}}>{isEmpty?'Has no more actor.':'Actor Loading...'}</h4>}
+          endMessage={<p>No more actor</p>}
         >
           {data.map(user => (
-            <Blogs data={user.node}/>
+            <ActorCard data={user}/>
           ))}
         </InfiniteScroll>
       </Box>
@@ -48,5 +43,5 @@ const InfiniteScrollComponent = () => {
   );
 };
 
-export default InfiniteScrollComponent;
+export default ActorList;
 
